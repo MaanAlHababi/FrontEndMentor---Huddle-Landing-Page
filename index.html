@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/72423e880c.js" crossorigin="anonymous"></script>
+  
+  <title>Frontend Mentor | Huddle landing page with curved sections</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="images/logo.svg" alt="Huddle Logo">
+    <a href="">Try it free</a>
+  </header>
+  <section class="hero">
+    <h1 class="hero-title">Build The Community Your Fans Will Love</h1>
+    <div class="hero-content">
+      <p>
+        Huddle re-imagines the way we build communities. You have a voice, but so does 
+        your audience. Create connections with your users as you engage in genuine discussion.
+      </p>
+      <a href="">Get Started For Free</a>
+    </div>
+  </section>
+  <section class="visuals">
+    <img class="screens" src="images/screen-mockups.svg" alt="screen-mockups">
+    <div class="metrics-container">
+      <section class="metric">
+        <img class="metric-icon" src="images/icon-communities.svg" alt="communities icon">
+        <h2 class="metric-count">1.4k+</h2>
+        <p>Communities formed</p>
+      </section>
+      <section class="metric">
+        <img class="metric-icon" src="images/icon-messages.svg" alt="messages icon">
+        <h2 class="metric-count">2.7m+</h2>
+        <p>Messages sent</p>
+      </section>
+    </div>
+  </section>
+  <section class="illustrations">
+    <article>
+      <div class="card gt">
+        <h2 class="card-title">
+          Grow Together
+        </h2>
+        <p>
+          Generate meaningful discussions with your audience and build a strong, loyal community. 
+          Think of the insightful conversations you miss out on with a feedback form.
+        </p>
+      </div>
+      <img class="illustration grow-together" src="images/illustration-grow-together.svg" alt="illustration-grow-together">
+    </article>
+    <article>
+      <div class="card fc">
+        <h2 class="card-title">
+          Flowing Conversations
+        </h2>
+        <p>
+          You wouldn't paginate a conversation in real life, so why do it online? Our threads have 
+          just-in-time loading for a more natural flow.
+        </p>
+      </div>
+      <img class="illustration flowing-conversation" src="images/illustration-flowing-conversation.svg" alt="illustration-flowing-conversation">
+    </article>
+    <article>
+      <div class="card yu">
+        <h2 class="card-title">
+          Your Users
+        </h2>
+        <p>
+          It takes no time at all to integrate Huddle with your app's authentication solution. This means, 
+          once signed in to your app, your users can start chatting immediately.
+        </p>
+      </div>
+      <img class="illustration your-users" src="images/illustration-your-users.svg" alt="illustration-your-users">
+    </article>
+  </section>
+  <section class="hero">
+    <h1 class="hero-title">Ready To Build Your Community?</h1>
+    <div class="hero-content">
+      <a href="">Get Started For Free</a>
+    </div>
+  </section>
+  <footer>
+    <section class="information">
+      <img class="white-logo" src="images/logo.svg" alt="White Huddle Logo">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia 
+        vestibulum a, ultrices quis sem.
+      </p>
+      <p class="contact">
+        <i class="fa-solid fa-phone-volume"></i> Phone: +1-543-123-4567
+      </p>
+      <p class="contact">
+        <i class="fa-solid fa-inbox"></i> example@huddle.com
+      </p>
+      <div class="socials">
+        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+      </div>
+    </section>
+    <section class="newsletter">
+      <h1>Newsletter</h1>
+      <p>
+        To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never 
+        send you spam or pass on your email address
+      </p>
+      <form class="sub-to-newsletter" novalidate>
+        <div class="email">
+          <input id="email" class="" type="email" required>
+          <span class="error">Check your email please</span>
+        </div>
+        <input type="submit" value="Subscribe">
+      </form>
+      
+    </section>
+    <div class="attribution">
+      <p>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      </p>
+      <hr>
+      <p>
+        Coded by <a href="#">Maan R. Al-Hababi</a>.
+      </p>
+    </div>
+  </footer>
+  <script>
+
+    document.querySelector('.sub-to-newsletter').addEventListener('submit', (event) => {
+      const email = document.getElementById('email');
+      const errorMsg = document.querySelector('.error');
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (!emailPattern.test(email.value)) {
+        event.preventDefault();
+        errorMsg.style.display = 'inline';
+        email.classList.add("errored");
+        } else {
+        errorMsg.style.display = 'none';
+        email.classList.remove("errored");
+      }
+    })
+  </script>
+</body>
+</html>
